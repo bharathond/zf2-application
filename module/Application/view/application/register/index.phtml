@@ -1,0 +1,52 @@
+
+<?php 
+$form = $this->registerForm;
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+<h3>User Registration </h3>
+<table>
+  <tr>
+    <td><?php echo $this->formlabel($form->get('zu_name'));?></td>
+    <td><?php echo $this->formElement($form->get('zu_name')); ?>
+    <span class="common-error-msg"><?php echo $this->formElementErrors($form->get('zu_name'));?></span></td>
+  </tr>
+  <tr>
+    <td><?php echo $this->formlabel($form->get('zu_username'));?></td>
+    <td><?php echo $this->formElement($form->get('zu_username')); ?>
+    <span class="common-error-msg"><?php echo $this->formElementErrors($form->get('zu_username'));?></span></td>
+  </tr>
+  <tr>
+    <td><?php echo $this->formlabel($form->get('zu_email'));?></td>
+    <td><?php echo $this->formElement($form->get('zu_email')); ?>
+    <span class="common-error-msg"><?php echo $this->formElementErrors($form->get('zu_email'));?></span></td>
+  </tr>
+  <tr>
+    <td><?php echo $this->formlabel($form->get('zu_phone'));?></td>
+    <td><?php echo $this->formElement($form->get('zu_phone')); ?>
+    <span class="common-error-msg"><?php echo $this->formElementErrors($form->get('zu_phone'));?></span></td>
+  </tr>
+  <tr>
+    <td><?php echo $this->formlabel($form->get('zu_password'));?></td>
+    <td><?php echo $this->formElement($form->get('zu_password')); ?>
+    <span class="common-error-msg"><?php echo $this->formElementErrors($form->get('zu_password'));?></span></td>
+  </tr>
+  <tr>
+    <td><?php echo $this->formlabel($form->get('zu_repassword'));?></td>
+    <td><?php echo $this->formElement($form->get('zu_repassword')); ?>
+    <span class="common-error-msg"><?php echo $this->formElementErrors($form->get('zu_repassword'));?></span></td>
+  </tr>
+
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+    <?php
+        echo $this->formRow($form->get('loginCsrf'));
+        echo $this->formElement($form->get('submit'));
+    ?>
+    </td>
+  </tr>
+</table>
+<?php
+echo $this->form()->closeTag($form);
+?>
